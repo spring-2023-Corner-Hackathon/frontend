@@ -26,7 +26,7 @@
         android:layout_height="match_parent"
         android:layout_gravity="center"
         android:orientation="vertical"
-        android:layout_margin="30dp">
+        android:layout_margin="5dp">
 
         <Button
             android:layout_width="match_parent"
@@ -39,13 +39,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:spinnerMode="dropdown"
-            android:layout_marginTop="20dp"/>
+            android:layout_marginTop="5dp"/>
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerBook"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="match_parent"
+            tools:listitem="@layout/item_main" />
 
-        </androidx.recyclerview.widget.RecyclerView>
     </LinearLayout>
 
 </LinearLayout>

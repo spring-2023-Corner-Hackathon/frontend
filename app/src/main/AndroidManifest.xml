@@ -14,12 +14,14 @@
         android:theme="@style/Theme.PhotoBook"
         tools:targetApi="31">
         <activity
+            android:name=".passwordActivity"
+            android:exported="false" />
+        <activity
             android:name=".MakeActivity"
             android:exported="false" />
         <activity
             android:name=".changepassActivity"
             android:exported="false" />
-
         <activity
             android:name=".RegisterActivity"
             android:exported="false" />

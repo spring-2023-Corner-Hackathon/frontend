@@ -37,7 +37,7 @@ class RegisterActivity : AppCompatActivity() {
                 if (pass == repass){
                     registerBinding.passVisible.visibility = View.INVISIBLE
 
-                    //회원정보 데이터베이스에 저장(백)
+                    //서버로 JSON 형식으로 보내기
 
 
                     Toast.makeText(
