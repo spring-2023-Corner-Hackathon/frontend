@@ -17,6 +17,16 @@
             android:name=".MakeActivity"
             android:exported="false" />
         <activity
+            android:name=".changepassActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
