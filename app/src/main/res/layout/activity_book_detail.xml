@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_margin="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BookDetailActivity">
+
+
+    <VideoView
+        android:id="@+id/videoBook"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/goBack"
+        android:visibility="invisible"
+        android:src="@drawable/ic_back"
+        android:layout_alignParentTop="true"
+        android:layout_margin="10dp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/menuBtn"
+        android:visibility="invisible"
+        android:src="@drawable/ic_more"
+        android:layout_alignParentRight="true"
+        android:layout_margin="10dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:id="@+id/contentBar"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:visibility="invisible">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/videoTitle"
+            android:layout_marginBottom="10dp"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:text="제목" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/videoDate"
+            android:layout_marginBottom="10dp"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:text="날짜" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/videoDetail"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:text="상세 내용" />
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/pause"
+        android:src="@drawable/ic_pause"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:visibility="invisible"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/play"
+        android:src="@drawable/ic_play"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:visibility="invisible"/>
+
+</RelativeLayout>

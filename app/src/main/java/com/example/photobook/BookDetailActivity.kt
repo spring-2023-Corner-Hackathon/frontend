@@ -3,9 +3,9 @@ package com.example.photobook
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
-class changepassActivity : AppCompatActivity() {
+class BookDetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_changepass)
+        setContentView(R.layout.activity_book_detail)
     }
 }

@@ -1,9 +1,11 @@
 package com.example.photobook
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.GridLayout
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -12,8 +14,6 @@ import com.bumptech.glide.Glide
 import com.example.photobook.databinding.ItemMainBinding
 import kotlinx.coroutines.NonDisposableHandle
 import kotlinx.coroutines.NonDisposableHandle.parent
-
-lateinit var binding: ItemMainBinding
 
 class BookAdatper(private val context: Context) : RecyclerView.Adapter<BookAdatper.ViewHolder>() {
 
@@ -39,6 +39,5 @@ class BookAdatper(private val context: Context) : RecyclerView.Adapter<BookAdatp
             Glide.with(itemView).load(item.img).into(imgProfile)
         }
     }
-
 
 }

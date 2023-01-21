@@ -47,7 +47,7 @@ class LoginActivity : AppCompatActivity() {
 
         //비밀번호 찾기
         loginBinding.changePass.setOnClickListener {
-            val loginIntent = Intent(this@LoginActivity, changepassActivity::class.java)
+            val loginIntent = Intent(this@LoginActivity, passwordActivity::class.java)
             startActivity(loginIntent)
         }
 
