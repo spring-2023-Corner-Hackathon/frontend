@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/ski03/Documents/AndroidStudioProjects/PhotoBook/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.121" />
+        <entry key="..\:/Users/ski03/Documents/AndroidStudioProjects/PhotoBook/app/src/main/res/drawable/radiobutton_bookcover1.xml" value="0.121" />
         <entry key="..\:/Users/ski03/Documents/AndroidStudioProjects/PhotoBook/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/ski03/Documents/AndroidStudioProjects/PhotoBook/app/src/main/res/layout/activity_make.xml" value="0.1" />
       </map>
