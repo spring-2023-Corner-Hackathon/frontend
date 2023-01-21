@@ -23,7 +23,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_gravity="center"
         android:orientation="vertical"
         android:layout_margin="30dp">
@@ -38,14 +38,14 @@
             android:id="@+id/sort"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"/>
+            android:spinnerMode="dropdown"
+            android:layout_marginTop="20dp"/>
 
-        <Button
+        <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="로그인하러 가기"
-            android:id="@+id/goLogin" />
+            android:layout_height="match_parent" >
 
+        </androidx.recyclerview.widget.RecyclerView>
     </LinearLayout>
 
 </LinearLayout>
