@@ -11,10 +11,12 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.LinearLayout
 import android.widget.Toast
+import androidx.core.view.get
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.photobook.databinding.FragmentHomeBinding
+import java.text.FieldPosition
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -65,15 +67,26 @@ class HomeFragment : Fragment() {
         bookAdapter = BookAdatper(requireContext())
         binding.recyclerBook.adapter = bookAdapter
 
+        bookAdapter.itemClick = object :  BookAdatper.ItemClick {
+            override fun onClick(view: View, position: Int) {
+
+                Toast.makeText(getActivity(), datas[position].title, Toast.LENGTH_SHORT).show()
+
+                val intent = Intent(getActivity(), BookDetailActivity::class.java)
+//                intent.putExtra("url", datas[position].webUrl)
+                startActivity(intent)
+            }
+        }
 
         datas.apply {
-            add(BookData(img = R.drawable.bookcover1, title = "mary"))
-            add(BookData(img = R.drawable.ic_mypage, title = "maryd"))
-            add(BookData(img = R.drawable.ic_calender, title = "maryf"))
+            add(BookData(img = R.drawable.bookcover1, title = "a" ))
+            add(BookData(img = R.drawable.ic_mypage,  title = "d"))
+            add(BookData(img = R.drawable.ic_calender, title = "c"))
+            add(BookData(img = R.drawable.ic_mypage, title = "f"))
+            add(BookData(img = R.drawable.ic_calender, title = "e"))
 
             bookAdapter.datas = datas
             bookAdapter.notifyDataSetChanged()
-
         }
     }
 
@@ -86,21 +99,25 @@ class HomeFragment : Fragment() {
         val adapter = ArrayAdapter(requireContext(), android.R.layout.simple_list_item_1, menu)
         spinner.adapter = adapter
 
+
+        bookAdapter = BookAdatper(requireContext())
+
         //spinner 선택 이벤트 처리
         spinner.setSelection(0)
         spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener,
             AdapterView.OnItemClickListener {
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
+
                 when(p2){
                     //최신순 선택
                     0 -> {
                         //아이디가 작은 것부터 recyclerview 나열(백)
-                        //Toast.makeText(context, "최신순으로 선택 되었습니다", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(context, "${spinner.get(p2).toString()}으로 선택 되었습니다", Toast.LENGTH_SHORT).show()
                     }
                     //이름순 선택
                     1 -> {
                         //이름순으로 recyclerview 나열(백)
-                        //Toast.makeText(context, "이름순으로 선택 되었습니다", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(context, "잔잔한으로 선택 되었습니다", Toast.LENGTH_SHORT).show()
                     }
                 }
             }

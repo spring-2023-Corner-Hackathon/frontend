@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/ConerHackaThon/frontend/app/src/main/res/drawable/ic_home.xml" value="0.2565" />
+        <entry key="..\:/ConerHackaThon/frontend/app/src/main/res/drawable/radiobutton_bookcover1.xml" value="0.274" />
         <entry key="..\:/ConerHackaThon/frontend/app/src/main/res/layout/activity_book_detail.xml" value="0.25" />
         <entry key="..\:/ConerHackaThon/frontend/app/src/main/res/layout/activity_changepass.xml" value="0.3109375" />
         <entry key="..\:/ConerHackaThon/frontend/app/src/main/res/layout/activity_login.xml" value="0.23097826086956522" />
@@ -14,13 +15,13 @@
         <entry key="..\:/ConerHackaThon/frontend/app/src/main/res/layout/fragment_calender.xml" value="0.309375" />
         <entry key="..\:/ConerHackaThon/frontend/app/src/main/res/layout/fragment_home.xml" value="0.22" />
         <entry key="..\:/ConerHackaThon/frontend/app/src/main/res/layout/fragment_my_page.xml" value="0.32916666666666666" />
-        <entry key="..\:/ConerHackaThon/frontend/app/src/main/res/layout/item_main.xml" value="0.328125" />
+        <entry key="..\:/ConerHackaThon/frontend/app/src/main/res/layout/item_main.xml" value="0.67" />
         <entry key="..\:/ConerHackaThon/frontend/app/src/main/res/layout/recyclerview.xml" value="0.18" />
         <entry key="..\:/ConerHackaThon/frontend/app/src/main/res/menu/navi_menu.xml" value="0.20555555555555555" />
         <entry key="..\:/ConerHacker/frontend/app/src/main/res/layout/activity_login.xml" value="0.33" />
-        <entry key="..\:/ConerHacker/frontend/app/src/main/res/layout/activity_register.xml" value="0.3109375" />
         <entry key="..\:/ConerHacker/frontend/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/ConerHacker/frontend/app/src/main/res/layout/activity_make.xml" value="0.1" />
+        <entry key="..\:/ConerHacker/frontend/app/src/main/res/layout/activity_register.xml" value="0.3109375" />
       </map>
     </option>
   </component>
