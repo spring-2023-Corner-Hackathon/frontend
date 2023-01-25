@@ -12,11 +12,22 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:text="표지 선택"
-        android:textSize="35dp"
+        android:textSize="30dp"
         android:gravity="center"
         android:layout_marginBottom="15dp"
         android:textColor="@color/black"/>
-
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#000000" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -38,12 +49,13 @@
             android:id="@+id/checkbox2"
             android:layout_weight="1"
             android:button="@null"
-            android:background="@drawable/radiobutton_bookcover1"
+            android:background="@drawable/radiobutton_bookcover2"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="30dp"
             android:layout_marginBottom="5dp"/>
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -54,7 +66,7 @@
             android:id="@+id/checkbox3"
             android:layout_weight="1"
             android:button="@null"
-            android:background="@drawable/radiobutton_bookcover1"
+            android:background="@drawable/radiobutton_bookcover3"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="20dp"
@@ -65,7 +77,7 @@
             android:id="@+id/checkbox4"
             android:layout_weight="1"
             android:button="@null"
-            android:background="@drawable/radiobutton_bookcover1"
+            android:background="@drawable/radiobutton_bookcover4"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="30dp"
@@ -79,6 +91,7 @@
     android:layout_marginTop="20dp"
     android:orientation="horizontal">
     <Button
+        android:backgroundTint="#939B62"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
@@ -87,6 +100,7 @@
         android:text="이전"
         android:id="@+id/coverBack"/>
     <Button
+        android:backgroundTint="#939B62"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginRight="20dp"
@@ -95,5 +109,6 @@
         android:text="다음"
         android:id="@+id/coverNext"/>
 </LinearLayout>
-
+</LinearLayout>
+    </ScrollView>
 </LinearLayout>
