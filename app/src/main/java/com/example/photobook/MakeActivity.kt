@@ -3,6 +3,8 @@ package com.example.photobook
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
 import com.example.photobook.databinding.ActivityMakeBinding
 
 class MakeActivity : AppCompatActivity() {
@@ -47,8 +49,15 @@ class MakeActivity : AppCompatActivity() {
             }
         }
         binding.coverNext.setOnClickListener {
-            //val intent = Intent(this, MusicCategory::class.java)
-            //startActivity(intent)
+            val intent = Intent(this, MusicCategory::class.java)
+            startActivity(intent)
+        }
+        binding.coverBack.setOnClickListener {
+            val homeFragment: HomeFragment = HomeFragment()
+            val manager: FragmentManager = supportFragmentManager
+            val transaction: FragmentTransaction = manager.beginTransaction()
+
+            transaction.replace(R.id.mainFrameLayout, homeFragment).commit()
         }
     }
 }

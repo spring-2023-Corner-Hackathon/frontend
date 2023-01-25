@@ -114,6 +114,12 @@ class HomeFragment : Fragment() {
             }
         }
 
+        // 포토북 만들러 가기
+        binding.makeBook.setOnClickListener {
+            val intent = Intent(getActivity(), MakeActivity::class.java)
+            startActivity(intent)
+        }
+
     }
 
         companion object {

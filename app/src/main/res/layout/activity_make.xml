@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:text="표지 선택"
-        android:textSize="35dp"
+        android:textSize="30dp"
         android:gravity="center"
         android:layout_marginBottom="15dp"
         android:textColor="@color/black"/>
