@@ -87,7 +87,7 @@ class MusicCategory : AppCompatActivity() {
             if(!binding.musicCategory1.isChecked && !binding.musicCategory2.isChecked &&
                 !binding.musicCategory3.isChecked && !binding.musicCategory4.isChecked &&
                 !binding.musicCategory5.isChecked && !binding.musicCategory6.isChecked) {
-                Toast.makeText(this, "카테고리를 한 가지 선택해주세요", Toast.LENGTH_SHORT)
+                Toast.makeText(this, "카테고리를 한 가지 선택해주세요", Toast.LENGTH_SHORT).show()
             }
             else {
                 val intent = Intent(this, ChooseMusic::class.java)

@@ -3,6 +3,7 @@ package com.example.photobook
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import com.example.photobook.databinding.ActivityMakeBinding
@@ -49,8 +50,15 @@ class MakeActivity : AppCompatActivity() {
             }
         }
         binding.coverNext.setOnClickListener {
-            val intent = Intent(this, MusicCategory::class.java)
-            startActivity(intent)
+            if(!binding.checkbox1.isChecked && !binding.checkbox2.isChecked &&
+                !binding.checkbox3.isChecked && !binding.checkbox4.isChecked) {
+                Toast.makeText(this, "표지를 선택해주세요", Toast.LENGTH_SHORT).show()
+            }
+            else {
+                val intent = Intent(this, MusicCategory::class.java)
+                startActivity(intent)
+            }
+
         }
         binding.coverBack.setOnClickListener {
             val homeFragment: HomeFragment = HomeFragment()
