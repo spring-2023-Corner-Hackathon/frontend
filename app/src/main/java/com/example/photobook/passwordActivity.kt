@@ -17,11 +17,12 @@ class passwordActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.changeBtn.setOnClickListener{
+            val id = binding.Id.getText().toString()
             val pass = binding.Password.getText().toString()
             val newPass = binding.newPass.getText().toString()
             val rePass = binding.rePass.getText().toString()
 
-            if (pass == "" || newPass == "" || rePass == "")
+            if (id == "" || pass == "" || newPass == "" || rePass == "")
 
                 Toast.makeText(
                     this@passwordActivity,
@@ -39,9 +40,15 @@ class passwordActivity : AppCompatActivity() {
                     val intent = Intent(applicationContext, LoginActivity::class.java)
                     startActivity(intent)
                 }
-                else{
+                else if (newPass != rePass){
                     binding.newVisible.visibility = View.VISIBLE
+
                 }
+                //만약 아이디가 맞지 않는다면
+                //binding.idVisible.visibility = View.VISIBLE
+
+                //만약 아이디의 비밀번호가 맞지 않는다면
+                //binding.passVisible.visibility = View.VISIBLE
             }
 
         }

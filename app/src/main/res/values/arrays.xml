@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="spinner_array">
+        <item>전체</item>
         <item>여행</item>
         <item>잔잔한</item>
     </string-array>

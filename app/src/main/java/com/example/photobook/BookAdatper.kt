@@ -22,12 +22,8 @@ class BookAdatper(private val context: Context) : RecyclerView.Adapter<BookAdatp
 
     var datas = mutableListOf<BookData>()
 
-    fun getItem(position: Int):BookData {
-        return datas[position]
-    }
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_main,parent,false)
+        val view = LayoutInflater.from(context).inflate(R.layout.item_main,parent,false)
         return ViewHolder(view)
     }
 
@@ -45,18 +41,6 @@ class BookAdatper(private val context: Context) : RecyclerView.Adapter<BookAdatp
         holder.bind(datas[position])
 
     }
-
-
-
-//    inner class sortBook() {
-//        fun sortTitle(item:BookData){
-//            datas.sortBy { item.title }
-//        }
-//
-//        fun sortDate(item:BookData){
-//            datas.sortBy { item.date }
-//        }
-//    }
 
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 

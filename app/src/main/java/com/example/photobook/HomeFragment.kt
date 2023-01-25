@@ -1,6 +1,5 @@
 package com.example.photobook
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,14 +8,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
-import android.widget.LinearLayout
 import android.widget.Toast
-import androidx.core.view.get
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.photobook.databinding.FragmentHomeBinding
-import java.text.FieldPosition
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -54,6 +49,10 @@ class HomeFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentHomeBinding.inflate(inflater, container, false)
 
+        binding.makeBook.setOnClickListener {
+            val intent = Intent(getActivity(), MakeActivity::class.java)
+            startActivity(intent)
+        }
         //recyclerView 동작
         initRecycler()
 
@@ -73,7 +72,8 @@ class HomeFragment : Fragment() {
                 Toast.makeText(getActivity(), datas[position].title, Toast.LENGTH_SHORT).show()
 
                 val intent = Intent(getActivity(), BookDetailActivity::class.java)
-//                intent.putExtra("url", datas[position].webUrl)
+                intent.putExtra("title", datas[position].title.toString())
+//                intent.putExtra("img", datas[position].img)
                 startActivity(intent)
             }
         }
@@ -108,16 +108,19 @@ class HomeFragment : Fragment() {
             AdapterView.OnItemClickListener {
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
 
+                //카테고리 선택
                 when(p2){
-                    //최신순 선택
+
                     0 -> {
                         //아이디가 작은 것부터 recyclerview 나열(백)
-                        Toast.makeText(context, "${spinner.get(p2).toString()}으로 선택 되었습니다", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(context, "${spinner.getSelectedItem().toString()}으로 선택 되었습니다", Toast.LENGTH_SHORT).show()
+
                     }
-                    //이름순 선택
+
+
                     1 -> {
                         //이름순으로 recyclerview 나열(백)
-                        Toast.makeText(context, "잔잔한으로 선택 되었습니다", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(context, "${spinner.getSelectedItem().toString()}으로 선택 되었습니다", Toast.LENGTH_SHORT).show()
                     }
                 }
             }

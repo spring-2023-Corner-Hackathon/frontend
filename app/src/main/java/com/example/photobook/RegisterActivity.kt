@@ -59,6 +59,10 @@ class RegisterActivity : AppCompatActivity() {
         //아이디 중복확인 버튼을 눌렀을때
         registerBinding.overlapId.setOnClickListener{
 
+            val id = registerBinding.ID.getText().toString()
+            if(id.length == 0){
+                Toast.makeText(this, "아이디를 입력하시오", Toast.LENGTH_SHORT).show()
+            }
             //만약 아이디가 중복된다면(백)
             //'이미 가입된 회원입니다.' 표시
             registerBinding.idVisible.visibility = View.VISIBLE
@@ -69,6 +73,10 @@ class RegisterActivity : AppCompatActivity() {
 
         //닉네임 중복확인 버튼을 눌렀을때
         registerBinding.overlapNickname.setOnClickListener{
+            val nickname = registerBinding.nickname.getText().toString()
+            if(nickname.length == 0){
+                Toast.makeText(this, "닉네임을 입력하시오", Toast.LENGTH_SHORT).show()
+            }
 
             //만약 닉네임이 중복된다면(백)
             //'중복된 닉네임입니다.' 표시

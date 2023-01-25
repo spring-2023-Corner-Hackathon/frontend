@@ -1,28 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_margin="10dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context=".BookDetailActivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <VideoView
-        android:id="@+id/videoBook"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        <VideoView
+            android:id="@+id/videoView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
 
+    </LinearLayout>
 
     <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/goBack"
-            android:visibility="invisible"
-            android:src="@drawable/ic_back"
-            android:layout_alignParentTop="true"
-            android:layout_margin="10dp" />
+        android:id="@+id/goBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:padding="10dp"
+        android:src="@drawable/ic_back"
+        android:visibility="invisible" />
 
     <ImageView
         android:id="@+id/menuBtn"
@@ -33,50 +41,106 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
+        android:padding="10dp"
         android:src="@drawable/ic_more"
         android:visibility="invisible" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="130dp"
-            android:id="@+id/contentBar"
-            android:layout_alignParentBottom="true"
-            android:orientation="vertical"
-            android:padding="20dp"
-            android:visibility="invisible">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/videoTitle"
-                android:layout_marginBottom="10dp"
-                android:textColor="#FFFFFF"
-                android:textStyle="bold"
-                android:text="제목" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/videoDate"
-                android:layout_marginBottom="10dp"
-                android:textColor="#FFFFFF"
-                android:textStyle="bold"
-                android:text="날짜" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/videoDetail"
-                android:textColor="#FFFFFF"
-                android:textStyle="bold"
-                android:text="상세 내용" />
-        </LinearLayout>
-
-        <ImageView
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/menuItems"
+        android:background="@drawable/border"
+        android:layout_marginTop="60dp"
+        android:layout_marginRight="5dp"
+        android:layout_alignParentRight="true"
+        android:visibility="gone"
+        android:orientation="vertical">
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/pause"
-            android:src="@drawable/ic_pause"
-            android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true"
-            android:visibility="invisible"/>
+            android:id="@+id/participant"
+            android:text="참여자 추가"
+            android:textSize="15dp"
+            android:padding="10dp" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#9A9A9A"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/downloadBook"
+            android:text="다운로드"
+            android:textSize="15dp"
+            android:padding="10dp" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#9A9A9A"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/modifyBook"
+            android:text="수정하기"
+            android:textSize="15dp"
+            android:padding="10dp" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#9A9A9A"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/deleteBook"
+            android:text="삭제하기"
+            android:textSize="15dp"
+            android:padding="10dp"
+            android:textColor="#FF0000"/>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/contentBar"
+        android:visibility="invisible"
+        android:background="#80878787"
+        android:orientation="vertical"
+        android:padding="20dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/videoTitle"
+            android:layout_marginBottom="10dp"
+            android:visibility="invisible"
+            android:textStyle="bold"
+            android:text="제목" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/videoDate"
+            android:visibility="invisible"
+            android:layout_marginBottom="10dp"
+            android:textStyle="bold"
+            android:text="날짜" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/videoDetail"
+            android:visibility="invisible"
+            android:textStyle="bold"
+            android:text="상세 내용" />
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/pause"
+        android:src="@drawable/ic_pause"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:visibility="invisible"/>
 
     <ImageView
         android:id="@+id/play"
@@ -85,7 +149,5 @@
         android:layout_centerInParent="true"
         android:src="@drawable/ic_play"
         android:visibility="invisible" />
-
-
 
 </RelativeLayout>
