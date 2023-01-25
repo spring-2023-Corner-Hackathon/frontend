@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="회원가입"
-        android:textSize="40dp"
+        android:textSize="25dp"
         android:gravity="center"
         android:layout_marginBottom="10dp"/>
 
@@ -28,7 +28,6 @@
         android:orientation="vertical"
         android:layout_margin="10dp">
 
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -37,7 +36,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="아이디"
-                android:textSize="20dp"
+                android:textSize="15dp"
                 android:layout_marginBottom="5dp"/>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -48,6 +47,7 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/ID"
                     android:maxLines="1"
+                    android:textSize="10dp"
                     android:hint="아이디"/>
                 <View
                     android:layout_width="0dp"
@@ -64,6 +64,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/idVisible"
                 android:text="이미 가입된 회원입니다."
+                android:textSize="10dp"
                 android:visibility="invisible"
                 android:textColor="#FF0000"/>
         </LinearLayout>
@@ -78,19 +79,43 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="비밀번호"
-                android:textSize="20dp"
+                android:textSize="15dp"
                 android:layout_marginBottom="5dp"/>
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/Password"
+                android:textSize="10dp"
                 android:inputType="textPassword"
                 android:maxLines="1"
                 android:hint="비밀번호" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="5dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="비밀번호 확인"
+                android:textSize="15dp"
+                android:layout_marginBottom="5dp"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/repass"
+                android:textSize="10dp"
+                android:maxLines="1"
+                android:inputType="textPassword"
+                android:hint="비밀번호 확인" />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/passVisible"
+                android:textSize="10dp"
                 android:text="비밀번호가 올바르지 않습니다."
                 android:visibility="invisible"
                 android:textColor="#FF0000"/>
@@ -105,29 +130,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="비밀번호 확인"
-                android:textSize="20dp"
-                android:layout_marginBottom="5dp"/>
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/repass"
-                android:maxLines="1"
-                android:inputType="textPassword"
-                android:hint="비밀번호 확인" />
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginBottom="10dp">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:text="닉네임"
-                android:textSize="20dp"
+                android:textSize="15dp"
                 android:layout_marginBottom="5dp"/>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -138,6 +142,7 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/nickname"
                     android:maxLines="1"
+                    android:textSize="10dp"
                     android:hint="닉네임"/>
                 <View
                     android:layout_width="0dp"
@@ -153,6 +158,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/nicknameVisible"
+                android:textSize="10dp"
                 android:text="중복된 닉네임 입니다."
                 android:visibility="invisible"
                 android:textColor="#FF0000"/>

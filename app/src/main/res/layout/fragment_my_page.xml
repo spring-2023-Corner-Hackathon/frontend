@@ -1,14 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="10dp"
     tools:context=".MyPageFragment">
 
-    <Button
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="로그인하러 가기"
-        android:id="@+id/goLogin" />
+        android:text="회원가입"
+        android:textSize="25dp"
+        android:gravity="center"
+        android:layout_marginBottom="10dp"/>
 
-</FrameLayout>
+    <View
+        android:layout_width="380dp"
+        android:layout_height="1dp"
+        android:background="#000000" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:orientation="vertical">
+        <androidx.cardview.widget.CardView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            app:cardCornerRadius="75dp"
+            android:layout_margin="5dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/propileImg"
+                android:background="@drawable/roundimg"
+                android:scaleType="centerCrop"/>
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_margin="5dp"
+            android:id="@+id/nickname"
+            android:text="닉네임"
+            android:textSize="20dp"
+            android:textStyle="bold"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_margin="5dp"
+            android:id="@+id/id"
+            android:text="아이디"
+            android:textSize="15dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:layout_margin="10dp">
+
+        <View
+            android:layout_width="380dp"
+            android:layout_height="1dp"
+            android:background="#B8B8B8" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="비밀번호 재설정"
+            android:layout_margin="10dp"
+            android:textSize="15dp"
+            android:id="@+id/ChangePass" />
+        <View
+            android:layout_width="380dp"
+            android:layout_height="1dp"
+            android:background="#B8B8B8" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="로그인하기 / 로그아웃하기"
+            android:layout_margin="10dp"
+            android:textSize="15dp"
+            android:id="@+id/goLogin" />
+        <View
+            android:layout_width="380dp"
+            android:layout_height="1dp"
+            android:background="#B8B8B8" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="계정 삭제하기"
+            android:layout_margin="10dp"
+            android:textSize="15dp"
+            android:id="@+id/Deltet"
+            android:textColor="#FF0000"/>
+    </LinearLayout>
+
+
+
+</LinearLayout>
