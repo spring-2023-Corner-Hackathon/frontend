@@ -3,8 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/ski03/Documents/AndroidStudioProjects/PhotoBook/app/src/main/res/drawable/category_background.xml" value="0.1285" />
+        <entry key="..\:/Users/ski03/Documents/AndroidStudioProjects/PhotoBook/app/src/main/res/drawable/checkbox_musiccategory.xml" value="0.1285" />
+        <entry key="..\:/Users/ski03/Documents/AndroidStudioProjects/PhotoBook/app/src/main/res/drawable/radiobutton_music.xml" value="0.1285" />
+        <entry key="..\:/Users/ski03/Documents/AndroidStudioProjects/PhotoBook/app/src/main/res/layout/activity_choose_music.xml" value="0.197265625" />
         <entry key="..\:/Users/ski03/Documents/AndroidStudioProjects/PhotoBook/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/ski03/Documents/AndroidStudioProjects/PhotoBook/app/src/main/res/layout/activity_make.xml" value="0.1" />
+        <entry key="..\:/Users/ski03/Documents/AndroidStudioProjects/PhotoBook/app/src/main/res/layout/activity_music_category.xml" value="0.2630208333333333" />
       </map>
     </option>
   </component>
