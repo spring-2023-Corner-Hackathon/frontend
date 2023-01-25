@@ -31,13 +31,11 @@ class BookAdatper(private val context: Context) : RecyclerView.Adapter<BookAdatp
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
-
         if(itemClick != null){
             holder.itemView.setOnClickListener{ v ->
                 itemClick?.onClick(v, position)
             }
         }
-
         holder.bind(datas[position])
 
     }

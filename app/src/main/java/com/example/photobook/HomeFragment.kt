@@ -79,11 +79,11 @@ class HomeFragment : Fragment() {
         }
 
         datas.apply {
-            add(BookData(img = R.drawable.bookcover1, title = "a" ))
-            add(BookData(img = R.drawable.ic_mypage,  title = "d"))
-            add(BookData(img = R.drawable.ic_calender, title = "c"))
-            add(BookData(img = R.drawable.ic_mypage, title = "f"))
-            add(BookData(img = R.drawable.ic_calender, title = "e"))
+            add(BookData(img = R.drawable.bookcover1, title = "강릉여행" ))
+            add(BookData(img = R.drawable.bookcover2,  title = "인생네컷"))
+            add(BookData(img = R.drawable.bookcover3, title = "부산여행"))
+            add(BookData(img = R.drawable.bookcover4, title = "f"))
+            add(BookData(img = R.drawable.bookcover1_selected, title = "e"))
 
             bookAdapter.datas = datas
             bookAdapter.notifyDataSetChanged()

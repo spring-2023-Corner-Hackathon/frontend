@@ -9,12 +9,14 @@
         android:id="@+id/pt_imageBtn"
         android:layout_width="117dp"
         android:layout_height="156dp"
+        android:elevation="8dp"
         android:src="@drawable/ic_mypage" />
 
     <TextView
         android:id="@+id/pt_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:gravity="center"
         android:text="title" />
 
