@@ -10,39 +10,21 @@
         <entry key="..\:/ConerHackaThon/frontend/app/src/main/res/drawable/roundimg.xml" value="0.18" />
         <entry key="..\:/ConerHackaThon/frontend/app/src/main/res/layout/activity_book_detail.xml" value="0.25" />
         <entry key="..\:/ConerHackaThon/frontend/app/src/main/res/layout/activity_changepass.xml" value="0.3109375" />
-        <entry key="..\:/ConerHackaThon/frontend/app/src/main/res/layout/activity_login.xml" value="0.23097826086956522" />
+        <entry key="..\:/ConerHackaThon/frontend/app/src/main/res/layout/activity_login.xml" value="0.33" />
         <entry key="..\:/ConerHackaThon/frontend/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/ConerHackaThon/frontend/app/src/main/res/layout/activity_make.xml" value="0.302536231884058" />
-        <entry key="..\:/ConerHackaThon/frontend/app/src/main/res/layout/activity_password.xml" value="0.3046875" />
-        <entry key="..\:/ConerHackaThon/frontend/app/src/main/res/layout/activity_register.xml" value="0.22" />
+        <entry key="..\:/ConerHackaThon/frontend/app/src/main/res/layout/activity_password.xml" value="0.5" />
+        <entry key="..\:/ConerHackaThon/frontend/app/src/main/res/layout/activity_register.xml" value="0.33" />
         <entry key="..\:/ConerHackaThon/frontend/app/src/main/res/layout/fragment_calender.xml" value="0.309375" />
-        <entry key="..\:/ConerHackaThon/frontend/app/src/main/res/layout/fragment_home.xml" value="0.22" />
-        <entry key="..\:/ConerHackaThon/frontend/app/src/main/res/layout/fragment_my_page.xml" value="0.32916666666666666" />
-        <entry key="..\:/ConerHackaThon/frontend/app/src/main/res/layout/item_main.xml" value="0.328125" />
+        <entry key="..\:/ConerHackaThon/frontend/app/src/main/res/layout/fragment_home.xml" value="0.33" />
+        <entry key="..\:/ConerHackaThon/frontend/app/src/main/res/layout/fragment_my_page.xml" value="0.22056159420289856" />
+        <entry key="..\:/ConerHackaThon/frontend/app/src/main/res/layout/item_main.xml" value="0.67" />
         <entry key="..\:/ConerHackaThon/frontend/app/src/main/res/layout/recyclerview.xml" value="0.18" />
         <entry key="..\:/ConerHackaThon/frontend/app/src/main/res/menu/navi_menu.xml" value="0.20555555555555555" />
         <entry key="..\:/ConerHacker/frontend/app/src/main/res/layout/activity_login.xml" value="0.33" />
-        <entry key="..\:/ConerHacker/frontend/app/src/main/res/layout/activity_register.xml" value="0.3109375" />
         <entry key="..\:/ConerHacker/frontend/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/ConerHacker/frontend/app/src/main/res/layout/activity_make.xml" value="0.1" />
         <entry key="..\:/ConerHacker/frontend/app/src/main/res/layout/activity_register.xml" value="0.3109375" />
-        <entry key="..\:/ConerHacker/frontend/app/src/main/res/layout/activity_register.xml" value="0.3109375" />
-        <entry key="..\:/ConerHacker/frontend/app/src/main/res/drawable/category_background.xml" value="0.1285" />
-        <entry key="..\:/ConerHacker/frontend/app/src/main/res/drawable/checkbox_musiccategory.xml" value="0.1285" />
-        <entry key="..\:/ConerHacker/frontend/app/src/main/res/drawable/ic_home.xml" value="0.1285" />
-        <entry key="..\:/ConerHacker/frontend/app/src/main/res/drawable/radiobutton_bookcover1.xml" value="0.1855" />
-        <entry key="..\:/ConerHacker/frontend/app/src/main/res/drawable/radiobutton_bookcover2.xml" value="0.1855" />
-        <entry key="..\:/ConerHacker/frontend/app/src/main/res/drawable/radiobutton_bookcover3.xml" value="0.1855" />
-        <entry key="..\:/ConerHacker/frontend/app/src/main/res/drawable/radiobutton_bookcover4.xml" value="0.1855" />
-        <entry key="..\:/ConerHacker/frontend/app/src/main/res/drawable/radiobutton_music.xml" value="0.1285" />
-        <entry key="..\:/ConerHacker/frontend/app/src/main/res/layout/activity_changepass.xml" value="0.3333333333333333" />
-        <entry key="..\:/ConerHacker/frontend/app/src/main/res/layout/activity_choose_music.xml" value="0.33" />
-        <entry key="..\:/ConerHacker/frontend/app/src/main/res/layout/activity_login.xml" value="0.3333333333333333" />
-        <entry key="..\:/ConerHacker/frontend/app/src/main/res/layout/activity_main.xml" value="0.16145307769929365" />
-        <entry key="..\:/ConerHacker/frontend/app/src/main/res/layout/activity_make.xml" value="0.14266304347826086" />
-        <entry key="..\:/ConerHacker/frontend/app/src/main/res/layout/activity_music_category.xml" value="0.2630208333333333" />
-        <entry key="..\:/ConerHacker/frontend/app/src/main/res/layout/activity_password.xml" value="0.3333333333333333" />
-        <entry key="..\:/ConerHacker/frontend/app/src/main/res/layout/fragment_home.xml" value="0.3333333333333333" />
       </map>
     </option>
   </component>

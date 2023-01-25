@@ -21,8 +21,6 @@ class passwordActivity : AppCompatActivity() {
             val newPass = binding.newPass.getText().toString()
             val rePass = binding.rePass.getText().toString()
 
-
-
             if (pass == "" || newPass == "" || rePass == "")
 
                 Toast.makeText(
@@ -38,12 +36,6 @@ class passwordActivity : AppCompatActivity() {
 
                 if(newPass == rePass){
                     binding.newVisible.visibility = View.INVISIBLE
-                    Toast.makeText(
-                        this@passwordActivity,
-                        "회원정보를 전부 입력해주세요.",
-                        Toast.LENGTH_SHORT
-                    ).show()
-
                     val intent = Intent(applicationContext, LoginActivity::class.java)
                     startActivity(intent)
                 }

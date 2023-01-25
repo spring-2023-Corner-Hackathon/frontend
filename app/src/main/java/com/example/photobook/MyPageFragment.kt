@@ -124,9 +124,29 @@ class MyPageFragment : Fragment() {
             intent.type = "image/*"
             requestGalleryLauncher.launch(intent)
         }
-        //닉네임 변경
-        binding.nickname.setOnClickListener {
+        //닉네임 재설정 눌렀을때
+        binding.ChangeNick.setOnClickListener {
             //닉네임 변경
+            binding.newNickname.visibility = View.VISIBLE
+            binding.setBtn.visibility = View.VISIBLE
+        }
+
+        //닉네임 변경 버튼 눌렀을때
+        binding.setBtn.setOnClickListener {
+            val newNick = binding.newNickname
+            val nickname = binding.nickname
+
+            //아무것도 입력하지 않았을때
+            if(newNick.getText().toString().length == 0){
+                Toast.makeText(getActivity(), "닉네임을 입력하시오", Toast.LENGTH_SHORT).show()
+            } else{
+                //id에 해당하는 닉네임을 변경해 준다(백)
+
+                //닉네임 자리에 새로운 닉네임으로 변경
+                nickname.text = newNick.getText().toString()
+                binding.newNickname.visibility = View.GONE
+                binding.setBtn.visibility = View.GONE
+            }
         }
 
         //비밀번호 재설정
@@ -149,13 +169,6 @@ class MyPageFragment : Fragment() {
         }
 
         return binding.root
-
-    }
-
-    private fun navigatePhotos() {
-        val intent = Intent(Intent.ACTION_GET_CONTENT)
-        intent.type = "image/*"
-        startActivityForResult(intent,2000)
 
     }
 

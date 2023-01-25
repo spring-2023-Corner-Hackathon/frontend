@@ -33,7 +33,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/makeBook"
             android:textSize="15dp"
-            android:text="포토북 만들러 가기" />
+            android:text="포토북 만들기" />
 
         <Spinner
             android:id="@+id/sort"
