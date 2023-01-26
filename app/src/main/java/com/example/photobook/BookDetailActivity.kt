@@ -67,8 +67,9 @@ class BookDetailActivity : AppCompatActivity() {
 
         //뒤로가기
         binding.goBack.setOnClickListener{
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this@BookDetailActivity, MainActivity::class.java)
             startActivity(intent)
+            finish()
         }
 
         //메뉴바

@@ -61,7 +61,7 @@ class HomeFragment : Fragment() {
 
     private fun initRecycler() {
         recyclerView = binding.recyclerBook
-        recyclerView.layoutManager = GridLayoutManager(requireContext(), 3)
+        recyclerView.layoutManager = GridLayoutManager(requireContext(), 2)
 
         bookAdapter = BookAdatper(requireContext())
         binding.recyclerBook.adapter = bookAdapter

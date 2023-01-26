@@ -28,7 +28,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
-        android:padding="10dp"
+        android:padding="5dp"
         android:src="@drawable/ic_back"
         android:visibility="invisible" />
 
@@ -41,7 +41,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
-        android:padding="10dp"
+        android:padding="5dp"
         android:src="@drawable/ic_more"
         android:visibility="invisible" />
 
