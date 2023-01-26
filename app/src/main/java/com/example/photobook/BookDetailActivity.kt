@@ -2,19 +2,24 @@ package com.example.photobook
 
 import android.R
 import android.content.Intent
+import android.media.MediaPlayer
 import android.net.Uri
 import android.os.Bundle
+import android.os.Environment
 import android.os.Handler
+import android.provider.MediaStore
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentTransaction
+import androidx.core.content.ContextCompat.startActivity
 import com.example.photobook.databinding.ActivityBookDetailBinding
+import retrofit2.http.Url
 
 
 class BookDetailActivity : AppCompatActivity() {
     lateinit var binding : ActivityBookDetailBinding
-    private val VIDEO_URL = "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+    //url경로
+//    private val VIDEO_URL = "https://yongsuchul.s3.us-west-1.amazonaws.com/nickname/video/testVideo1.mp4"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,14 +29,17 @@ class BookDetailActivity : AppCompatActivity() {
         binding.videoTitle.text = intent.getStringExtra("title")
 
         val videoView = binding.videoView
-        var uri: Uri = Uri.parse(VIDEO_URL)
+//        val uri: Uri = Uri.parse(VIDEO_URL)
+        val VideoFile: String = Environment.getExternalStorageDirectory().absolutePath+ "/Download/testVideo1.mp4"
 
-        videoView.setVideoURI(uri) // 없으면 에러
+        videoView.setVideoPath(VideoFile) // 없으면 에러
         videoView.requestFocus()    // 준비하는 과정을 미리함
 
         videoView.setOnPreparedListener {
-            videoView.start()       // 동영상 재개
+            videoView.start() // 동영상 재개
+            Toast.makeText(this@BookDetailActivity, "영상시작", Toast.LENGTH_SHORT).show()
         }
+
 
         videoView.setOnClickListener {
             //비디오가 재생중이면
@@ -87,17 +95,21 @@ class BookDetailActivity : AppCompatActivity() {
                     startActivity(intent)
                 }
                 //다운로드
-                binding.downloadBook.setOnClickListener {
-                    //영상 다운로드 받기
-                }
+//                binding.downloadBook.setOnClickListener {
+//                    //영상 다운로드 받기
+//                    val intent = Intent(Intent.ACTION_VIEW, Uri.parse(VIDEO_URL))
+//                    startActivity(intent)
+//                }
                 //상세설정 수정
                 binding.modifyBook.setOnClickListener {
                     //수정 페이지로 이동
-               }
-               //삭제
-               binding.deleteBook.setOnClickListener {
-                   //동영상 삭제
-               }
+                    val intent = Intent(this@BookDetailActivity, ModifyBookActivity::class.java)
+                    startActivity(intent)
+                }
+                //삭제
+                binding.deleteBook.setOnClickListener {
+                    //동영상 삭제
+                }
             }
         }
     }

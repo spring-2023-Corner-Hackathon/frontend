@@ -72,22 +72,21 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="15dp"
             android:orientation="horizontal">
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="100dp"
-                android:layout_weight="1"
                 android:text="이전"
                 android:backgroundTint="#939B62"
                 android:id="@+id/coverBack"/>
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="20dp"
-                android:layout_marginLeft="100dp"
-                android:layout_weight="1"
                 android:text="다음"
                 android:backgroundTint="#939B62"
                 android:id="@+id/coverNext"/>

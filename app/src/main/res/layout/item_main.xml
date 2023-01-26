@@ -25,4 +25,10 @@
         android:gravity="center"
         android:text="title" />
 
+    <CheckBox
+        android:id="@+id/pt_isopen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
+
 </LinearLayout>

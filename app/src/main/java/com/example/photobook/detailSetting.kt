@@ -110,7 +110,7 @@ class detailSetting : AppCompatActivity() {
                 Toast.makeText(this, "공개 범위를 선택해주세요.", Toast.LENGTH_SHORT).show()
             }
             else {
-                //val intent = Intent(this, ChooseImages::class.java)
+                val intent = Intent(this, VideoDownloadActivity::class.java)
                 startActivity(intent)
             }
         }

@@ -39,9 +39,10 @@ class ParticipantActivity : AppCompatActivity() {
 
                 //추가하기 버튼 누르기
                 binding.addBtn.setOnClickListener {
-                    //참여자 추가하기
+                    //참여자 추가하기(백)
                     //getName인 id를 찾아서 공동 수정하기
                     //if(getName == id)
+                    datas.add(ProfileData(img = R.drawable.ic_mypage, nickname = getName, checked = false))
                 }
             }
         }
@@ -59,13 +60,14 @@ class ParticipantActivity : AppCompatActivity() {
         profileAdapter.itemClick = object :  ProfileAdapter.ItemClick {
             override fun onClick(view: View, position: Int) {
 
-                val checked: CheckBox = view.findViewById(R.id.checked)
-
                 Toast.makeText(this@ParticipantActivity, datas[position].checked.toString(), Toast.LENGTH_SHORT).show()
 
                 //삭제하기 버튼 누르기기
                 binding.deleteBtn.setOnClickListener {
-                    //선택된 프로필 모두 삭제됨
+                    //선택된 프로필 모두 삭제됨(백)
+                    if(datas[position].checked == true){
+                        datas.removeAt(position)
+                    }
                 }
             }
         }

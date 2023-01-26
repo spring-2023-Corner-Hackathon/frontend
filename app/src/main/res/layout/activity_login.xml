@@ -69,26 +69,15 @@
         </LinearLayout>
 
         <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:id="@+id/LoginBtn"
-            android:backgroundTint="#FFB26B"
-            android:textColor="#000000"
-            android:layout_marginTop="40dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginLeft="20dp"
-            android:text="계정으로 로그인하기" />
-        <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/LoginKakaoBtn"
-
-            android:backgroundTint="#FFD56F"
-            android:textColor="#000000"
-            android:layout_marginTop="15dp"
-            android:layout_marginRight="20dp"
             android:layout_marginLeft="20dp"
-            android:text="카카오톡으로 로그인하기" />
+            android:layout_marginTop="60dp"
+            android:layout_marginRight="20dp"
+            android:backgroundTint="#FFB26B"
+            android:text="계정으로 로그인하기"
+            android:textColor="#000000" />
 
     </LinearLayout>
 

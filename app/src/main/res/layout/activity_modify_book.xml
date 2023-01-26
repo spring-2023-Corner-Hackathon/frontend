@@ -5,13 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="10dp"
-    tools:context=".detailSetting">
+    tools:context=".ModifyBookActivity">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:text="상세 정보"
+        android:text="상세 정보 수정"
         android:textSize="25dp"
         android:gravity="center"
         android:layout_marginBottom="10dp"
@@ -30,6 +29,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <LinearLayout
+                android:padding="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
@@ -38,7 +38,6 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
                     <TextView
-                        android:textColor="@color/black"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="포토북 제목"
@@ -61,7 +60,6 @@
                     android:background="@drawable/setting_background"
                     tools:ignore="SpeakableTextPresentCheck" />
                 <TextView
-                    android:textColor="@color/black"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="상세 내용"
@@ -76,7 +74,6 @@
                     android:background="@drawable/setting_background"
                     tools:ignore="SpeakableTextPresentCheck" />
                 <TextView
-                    android:textColor="@color/black"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="카테고리 설정"
@@ -91,7 +88,6 @@
                     android:layout_marginBottom="30dp"
                     tools:ignore="SpeakableTextPresentCheck" />
                 <TextView
-                    android:textColor="@color/black"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="기간 설정"
@@ -134,7 +130,6 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
                     <TextView
-                        android:textColor="@color/black"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="공개 범위"
@@ -185,7 +180,7 @@
                     android:id="@+id/coverBack"/>
                 <View
                     android:layout_width="0dp"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1" />
                 <Button
                     android:layout_width="wrap_content"

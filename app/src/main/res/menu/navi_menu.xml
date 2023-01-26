@@ -2,8 +2,8 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/calendarFragment"
-        android:title="일정"
-        android:icon="@drawable/ic_calender" />
+        android:title="스토리"
+        android:icon="@drawable/ic_share" />
     <item
         android:id="@+id/homeFragment"
         android:title="홈"

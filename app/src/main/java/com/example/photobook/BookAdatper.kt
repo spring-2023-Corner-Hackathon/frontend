@@ -5,6 +5,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.CheckBox
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -44,9 +45,11 @@ class BookAdatper(private val context: Context) : RecyclerView.Adapter<BookAdatp
 
         private val txtName: TextView = itemView.findViewById(R.id.pt_title)
         private val imgProfile: ImageView = itemView.findViewById(R.id.pt_imageBtn)
+        private val isopen: CheckBox = itemView.findViewById(R.id.pt_isopen)
 
         fun bind(item: BookData) {
             txtName.text = item.title
+            isopen.isChecked = item.isOpen
             Glide.with(itemView).load(item.img).into(imgProfile)
         }
     }

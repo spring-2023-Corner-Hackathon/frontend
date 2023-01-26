@@ -61,7 +61,7 @@ class HomeFragment : Fragment() {
 
     private fun initRecycler() {
         recyclerView = binding.recyclerBook
-        recyclerView.layoutManager = GridLayoutManager(requireContext(), 2)
+        recyclerView.layoutManager = GridLayoutManager(requireContext(), 3)
 
         bookAdapter = BookAdatper(requireContext())
         binding.recyclerBook.adapter = bookAdapter
@@ -79,11 +79,11 @@ class HomeFragment : Fragment() {
         }
 
         datas.apply {
-            add(BookData(img = R.drawable.bookcover1, title = "강릉여행" ))
-            add(BookData(img = R.drawable.bookcover2,  title = "인생네컷"))
-            add(BookData(img = R.drawable.bookcover3, title = "부산여행"))
-            add(BookData(img = R.drawable.bookcover4, title = "f"))
-            add(BookData(img = R.drawable.bookcover1_selected, title = "e"))
+            add(BookData(img = R.drawable.bookcover1, title = "강릉여행" , isOpen = true))
+            add(BookData(img = R.drawable.bookcover2,  title = "인생네컷", isOpen = false))
+            add(BookData(img = R.drawable.bookcover3, title = "부산여행", isOpen = true))
+            add(BookData(img = R.drawable.bookcover4, title = "f", isOpen = true))
+            add(BookData(img = R.drawable.bookcover1_selected, title = "e", isOpen = false))
 
             bookAdapter.datas = datas
             bookAdapter.notifyDataSetChanged()
@@ -95,7 +95,7 @@ class HomeFragment : Fragment() {
 
         //spinner 적용
         val spinner = binding.sort
-        val menu = resources.getStringArray(R.array.spinner_array)
+        val menu = resources.getStringArray(R.array.categoryItem)
         val adapter = ArrayAdapter(requireContext(), android.R.layout.simple_list_item_1, menu)
         spinner.adapter = adapter
 
