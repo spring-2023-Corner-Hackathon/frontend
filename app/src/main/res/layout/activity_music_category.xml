@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:padding="10dp"
     tools:context=".MakeActivity">
 
     <TextView
@@ -12,10 +13,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:text="음악 카테고리 선택"
-        android:textSize="30dp"
+        android:textSize="25dp"
         android:gravity="center"
-        android:layout_marginBottom="10dp"
-        android:textColor="@color/black"/>
+        android:layout_marginBottom="10dp"/>
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
@@ -48,7 +48,6 @@
                     android:layout_height="wrap_content"
                     android:text="카테고리"
                     android:gravity="center"
-                    android:textColor="@color/black"
                     android:textSize="25dp"/>
             </LinearLayout>
 

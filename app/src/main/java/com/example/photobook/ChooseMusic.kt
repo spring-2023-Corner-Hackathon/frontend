@@ -169,7 +169,7 @@ class ChooseMusic : AppCompatActivity() {
 
         binding.coverNext.setOnClickListener {
             if(!binding.colors.isChecked&&!binding.lamour.isChecked&&
-                    !binding.flamingo.isChecked&&!binding.colors.isChecked) {
+                    !binding.flamingo.isChecked&&!binding.weekend.isChecked) {
                 Toast.makeText(this, "음악을 한 가지 선택해주세요", Toast.LENGTH_SHORT).show()
             }
             else {

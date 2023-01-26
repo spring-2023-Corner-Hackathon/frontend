@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:padding="10dp"
     tools:context=".ChooseMusic">
     <LinearLayout
         android:orientation="vertical"
@@ -18,8 +19,7 @@
             android:text="음악 선택"
             android:textSize="30dp"
             android:gravity="center"
-            android:layout_marginBottom="10dp"
-            android:textColor="@color/black"/>
+            android:layout_marginBottom="10dp"/>
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
@@ -32,7 +32,7 @@
             android:padding="10dp"
             android:orientation="vertical">
             <TextView
-                android:layout_marginBottom="20dp"
+                android:layout_marginBottom="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=""
@@ -40,6 +40,12 @@
                 android:padding="10dp"
                 android:id="@+id/selectedMusicCategory"
                 android:background="@drawable/category_background"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#D9D9D9"
+                android:layout_marginBottom="10dp"/>
             <RadioGroup
                 android:id="@+id/music_rg"
                 android:layout_marginLeft="5dp"
