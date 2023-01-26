@@ -170,14 +170,13 @@ class ChooseMusic : AppCompatActivity() {
         binding.coverNext.setOnClickListener {
             if(!binding.colors.isChecked&&!binding.lamour.isChecked&&
                     !binding.flamingo.isChecked&&!binding.colors.isChecked) {
-                Toast.makeText(this, "카테고리를 한 가지 선택해주세요", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "음악을 한 가지 선택해주세요", Toast.LENGTH_SHORT).show()
             }
             else {
                 if (mPlayer.isPlaying) {
                     mPlayer.stop()
                 }
-                val intent = Intent(this, ChooseMusic::class.java)
-                intent.putExtra("musicName", selectedMp3)
+                val intent = Intent(this, ChooseImages::class.java)
                 intent.putExtra("editPoint", editPoint)
                 startActivity(intent)
             }
