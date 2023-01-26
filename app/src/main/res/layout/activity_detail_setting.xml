@@ -33,83 +33,117 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
-                <TextView
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="포토북 제목"
-                    android:textSize="16dp"/>
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="포토북 제목"
+                        android:textSize="16dp"/>
+                    <TextView
+                        android:layout_marginLeft="5dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="*"
+                        android:textColor="#F04851"
+                        android:textSize="16dp"/>
+                </LinearLayout>
 
                 <EditText
+                    android:id="@+id/photoBookTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="30dp"
                     android:background="@drawable/setting_background"
-                    android:id="@+id/photoBookTitle"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    tools:ignore="SpeakableTextPresentCheck" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="상세 내용"
                     android:textSize="16dp"/>
+
                 <EditText
+                    android:id="@+id/photoBookMemo"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="30dp"
                     android:background="@drawable/setting_background"
-                    android:id="@+id/photoBookMemo"
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"/>
+                    tools:ignore="SpeakableTextPresentCheck" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="카테고리 설정"
                     android:textSize="16dp">
                 </TextView>
+
                 <Spinner
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="30dp"
                     android:id="@+id/categorySpinner"
                     android:layout_width="200dp"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="48dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="30dp"
+                    tools:ignore="SpeakableTextPresentCheck" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="기간 설정"
                     android:textSize="16dp"/>
                 <LinearLayout
+                    android:layout_marginBottom="30dp"
                     android:layout_marginTop="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
+
                     <Button
-                        android:textColor="@color/black"
-                        android:backgroundTint="#D9D9D9"
                         android:id="@+id/startDate"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text=""/>
+                        android:backgroundTint="#D9D9D9"
+                        android:text=""
+                        android:textColor="@color/black"
+                        tools:ignore="SpeakableTextPresentCheck" />
                     <TextView
                         android:gravity="center"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.5"
                         android:text="~"/>
+
                     <Button
-                        android:textColor="@color/black"
-                        android:backgroundTint="#D9D9D9"
                         android:id="@+id/endDate"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text=""/>
+                        android:backgroundTint="#D9D9D9"
+                        android:text=""
+                        android:textColor="@color/black"
+                        tools:ignore="SpeakableTextPresentCheck" />
                 </LinearLayout>
-                <TextView
-                    android:layout_marginTop="30dp"
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="공개 범위"
-                    android:textSize="16dp"/>
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="공개 범위"
+                        android:textSize="16dp"/>
+                    <TextView
+                        android:layout_marginLeft="5dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="*"
+                        android:textColor="#F04851"
+                        android:textSize="16dp"/>
+                </LinearLayout>
                 <RadioGroup
+                    android:id="@+id/public_rg"
                     android:layout_marginTop="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

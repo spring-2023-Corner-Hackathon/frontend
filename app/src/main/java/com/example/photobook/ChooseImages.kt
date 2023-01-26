@@ -38,6 +38,7 @@ class ChooseImages : AppCompatActivity() {
     private val imageResult = registerForActivityResult(
         ActivityResultContracts.StartActivityForResult()
     ) {
+        uriList.clear()
         if(it.resultCode == Activity.RESULT_OK && it.data?.data != null) {
             val clipData = it?.data?.clipData
             val clipDataSize = clipData?.itemCount
