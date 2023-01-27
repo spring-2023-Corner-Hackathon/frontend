@@ -105,9 +105,11 @@ class detailSetting : AppCompatActivity() {
         binding.coverNext.setOnClickListener {
             if(TextUtils.isEmpty(binding.photoBookTitle.text)) {
                 Toast.makeText(this, "제목은 필수 사항입니다.", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
             }
             if(!binding.rbEveryone.isChecked&&!binding.rbOnlyMe.isChecked) {
                 Toast.makeText(this, "공개 범위를 선택해주세요.", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
             }
             else {
                 val intent = Intent(this, VideoDownloadActivity::class.java)
