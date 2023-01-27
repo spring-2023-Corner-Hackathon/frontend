@@ -16,6 +16,7 @@ import java.util.concurrent.TimeUnit
 
 class LoginActivity : AppCompatActivity() {
     lateinit var loginBinding : ActivityLoginBinding
+    lateinit var nickname: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -53,14 +54,14 @@ class LoginActivity : AppCompatActivity() {
 
                         val str = response.body().toString().split(",")
                         val succes = str.get(0).split(":").get(1)
-                        val login_id = str.get(1).split(":").get(1)
+                        nickname = str.get(1).split(":").get(1)
 
                         if(succes.toBoolean() == true){
-                            Log.d("mobile", response.body().toString())
-//
+                            Log.d("app", response.body().toString())
+
                                 val builder1 = AlertDialog.Builder(this@LoginActivity)
                                 builder1.setTitle("Login Success")
-                                builder1.setMessage(login_id + "님 환영합니다.")
+                                builder1.setMessage(nickname + "님 환영합니다.")
                                 builder1.show()
 
                                 val intent = Intent(this@LoginActivity, MainActivity::class.java)
@@ -76,12 +77,6 @@ class LoginActivity : AppCompatActivity() {
 
                 })
             }
-        }
-
-        //비밀번호 찾기
-        loginBinding.changePass.setOnClickListener {
-            val loginIntent = Intent(this@LoginActivity, passwordActivity::class.java)
-            startActivity(loginIntent)
         }
 
 

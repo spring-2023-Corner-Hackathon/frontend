@@ -10,3 +10,9 @@ data class RegisterResult(
     var password: String,
     var nickname: String
 )
+
+data class PasswordResult(
+    var user_id: String,
+    var currentPwd: String,
+    var newPwd: String
+)

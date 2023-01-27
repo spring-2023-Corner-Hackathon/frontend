@@ -18,6 +18,10 @@ import retrofit2.converter.scalars.ScalarsConverterFactory
 
 class RegisterActivity : AppCompatActivity() {
     lateinit var registerBinding: ActivityRegisterBinding
+    lateinit var login_id: String
+    lateinit var login_pwd: String
+    lateinit var login_nickname: String
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         registerBinding = ActivityRegisterBinding.inflate(layoutInflater)
@@ -65,7 +69,13 @@ class RegisterActivity : AppCompatActivity() {
                             val success = str.get(0).split(":").get(1)
                             val message = str.get(1).split(":").get(1).split("\"").get(1)
 
+                            login_id = str.get(1).split(":").get(1)
+                            login_pwd = str.get(2).split(":").get(1)
+                            login_nickname = str.get(3).split(":").get(1).split("\"").get(2)
+
                             if(success.toBoolean() == true){
+
+                                Log.d("mobile", "id: "+login_id+" password: "+login_pwd+" nickname: "+ login_nickname)
 
                                 val builder1 = AlertDialog.Builder(this@RegisterActivity)
                                 builder1.setTitle("Register Success")
