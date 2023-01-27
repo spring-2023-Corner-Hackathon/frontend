@@ -19,5 +19,9 @@ class VideoDownloadActivity : AppCompatActivity() {
             startActivity(intent)
 
         }
+        binding.backToHome.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
