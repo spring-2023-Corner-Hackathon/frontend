@@ -11,4 +11,11 @@ interface RetrofitInterface {
         @Query("password") password: String
     ): Call<LoginResult>
 
+    @POST("register")
+    fun executeRegister(
+        @Query("id") id: String,
+        @Query("password") password: String,
+        @Query("nickname") nickname: String
+    ): Call<String>
+
 }

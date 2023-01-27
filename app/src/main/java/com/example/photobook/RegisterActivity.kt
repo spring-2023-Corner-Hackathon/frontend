@@ -1,12 +1,19 @@
 package com.example.photobook
 
+import android.app.AlertDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import com.example.photobook.databinding.ActivityLoginBinding
 import com.example.photobook.databinding.ActivityRegisterBinding
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
 class RegisterActivity : AppCompatActivity() {
     lateinit var registerBinding: ActivityRegisterBinding
@@ -23,6 +30,14 @@ class RegisterActivity : AppCompatActivity() {
             val repass = registerBinding.repass.getText().toString()
             val nickname = registerBinding.nickname.toString()
 
+            val retrofit = Retrofit.Builder()
+                .baseUrl("http://10.0.2.2:8080/api/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build()
+
+            val api = retrofit.create(RetrofitInterface::class.java)
+            val call = api.executeRegister(id, pass, nickname)
+
             //모든정보가 입력되지 않았을때
             if (id == "" || pass == "" || repass == "" || nickname == "")
 
@@ -38,15 +53,38 @@ class RegisterActivity : AppCompatActivity() {
                     registerBinding.passVisible.visibility = View.INVISIBLE
 
                     //서버로 JSON 형식으로 보내기
+                    call.clone().enqueue(object : Callback<String> {
+                        override fun onFailure(call: Call<String>, t: Throwable) {
+                            Log.d("mobile", t.toString())
+                        }
 
+                        override fun onResponse(call: Call<String>, response: Response<String>) {
+                            Log.d("mobile", response.code().toString())
 
-                    Toast.makeText(
-                        this@RegisterActivity,
-                        "가입되었습니다.",
-                        Toast.LENGTH_SHORT
-                    ).show()
-                    val intent = Intent(applicationContext, LoginActivity::class.java)
-                    startActivity(intent)
+                            if(response.isSuccessful){
+
+                                Log.d("mobile", response.toString())
+                                val builder1 = AlertDialog.Builder(this@RegisterActivity)
+                                builder1.setTitle("Register Success")
+                                builder1.setMessage(id + "님 회원가입되었습니다.")
+                                builder1.show()
+
+                                val intent =Intent(this@RegisterActivity, MainActivity::class.java)
+                                startActivity(intent)
+//                                intent.putExtra()
+                                finish()
+                            }
+                        }
+
+                    })
+
+//                    Toast.makeText(
+//                        this@RegisterActivity,
+//                        "가입되었습니다.",
+//                        Toast.LENGTH_SHORT
+//                    ).show()
+//                    val intent = Intent(applicationContext, LoginActivity::class.java)
+//                    startActivity(intent)
                 }
                 else{
                     //비밀번호가 일치하지 않는다면
@@ -56,42 +94,5 @@ class RegisterActivity : AppCompatActivity() {
             }
         }
 
-        //아이디 중복확인 버튼을 눌렀을때
-        registerBinding.overlapId.setOnClickListener{
-
-            val id = registerBinding.ID.getText().toString()
-            if(id.length == 0){
-                registerBinding.idVisible.visibility = View.GONE
-                Toast.makeText(this, "아이디를 입력하시오", Toast.LENGTH_SHORT).show()
-
-            }else {
-
-                //만약 아이디가 중복된다면(백)
-                //'이미 가입된 회원입니다.' 표시
-                registerBinding.idVisible.visibility = View.VISIBLE
-
-                //아이디가 중복되지 않는다면(백)
-                //registerBinding.idVisible.visibility = View.INVISIBLE
-
-            }
-        }
-
-        //닉네임 중복확인 버튼을 눌렀을때
-        registerBinding.overlapNickname.setOnClickListener{
-            val nickname = registerBinding.nickname.getText().toString()
-            if(nickname.length == 0){
-                registerBinding.nicknameVisible.visibility = View.GONE
-                Toast.makeText(this, "닉네임을 입력하시오", Toast.LENGTH_SHORT).show()
-            }else{
-
-                //만약 닉네임이 중복된다면(백)
-                //'중복된 닉네임입니다.' 표시
-                registerBinding.nicknameVisible.visibility = View.VISIBLE
-
-                //닉네임이 중복되지 않는다면(백)
-                //registerBinding.nicknameVisible.visibility = View.INVISIBLE
-            }
-
-        }
     }
 }
