@@ -59,16 +59,16 @@ class LoginActivity : AppCompatActivity() {
                         if(succes.toBoolean() == true){
                             Log.d("app", response.body().toString())
 
-                                val builder1 = AlertDialog.Builder(this@LoginActivity)
-                                builder1.setTitle("Login Success")
-                                builder1.setMessage(nickname + "님 환영합니다.")
-                                builder1.show()
+                            val builder1 = AlertDialog.Builder(this@LoginActivity)
+                            builder1.setTitle("Login Success")
+                            builder1.setMessage(nickname + "님 환영합니다.")
+                            builder1.show()
 
-                                val intent = Intent(this@LoginActivity, MainActivity::class.java)
-                                startActivity(intent)
+                            val intent = Intent(this@LoginActivity, MainActivity::class.java)
+                            startActivity(intent)
 //                                intent.putExtra()
-                                finish()
-                         }
+                            finish()
+                        }
                         else{
                             Log.d("mobile", response.body().toString())
                             Toast.makeText(this@LoginActivity,"아이디와 비밀번호를 다시 확인하세요", Toast.LENGTH_LONG).show()

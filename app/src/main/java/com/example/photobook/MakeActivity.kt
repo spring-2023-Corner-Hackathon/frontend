@@ -9,10 +9,12 @@ import androidx.fragment.app.FragmentTransaction
 import com.example.photobook.databinding.ActivityMakeBinding
 
 class MakeActivity : AppCompatActivity() {
+    var coverResult = 0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         // setContentView(R.layout.activity_make)
-        var coverResult = 0
+
 
         val binding = ActivityMakeBinding.inflate(layoutInflater)
         setContentView(binding.root)

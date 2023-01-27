@@ -5,18 +5,26 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
+import android.util.Log
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import com.example.photobook.databinding.ActivityDetailSettingBinding
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.converter.scalars.ScalarsConverterFactory
 import java.util.*
 
 class detailSetting : AppCompatActivity() {
+
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         //setContentView(R.layout.activity_detail_setting)
-
+        val coverBook = MakeActivity().coverResult
+        Log.d("mobileApp", coverBook.toString())
         val binding = ActivityDetailSettingBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -103,6 +111,16 @@ class detailSetting : AppCompatActivity() {
         }
 
         binding.coverNext.setOnClickListener {
+
+            val retrofit = Retrofit.Builder()
+                .baseUrl("http://10.0.2.2:8080/api/")
+                .addConverterFactory(ScalarsConverterFactory.create())
+                .addConverterFactory(GsonConverterFactory.create())
+                .build()
+
+            val api = retrofit.create(RetrofitInterface::class.java)
+            //val call = api.executeSave()
+
             if(TextUtils.isEmpty(binding.photoBookTitle.text)) {
                 Toast.makeText(this, "제목은 필수 사항입니다.", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
