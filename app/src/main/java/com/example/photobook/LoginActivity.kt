@@ -38,24 +38,29 @@ class LoginActivity : AppCompatActivity() {
             val api = retrofit.create(RetrofitInterface::class.java)
             val call = api.executeLogin(id, password)
 
-            Log.d("mobile", id + password)
+//            Log.d("mobile", id + password)
 
             if(id.length == 0 || password.length == 0)
                 Toast.makeText(this@LoginActivity, "아이디나 비밀번호를 입력하시오", Toast.LENGTH_LONG).show()
 
             else{
-                call.clone().enqueue(object :Callback<LoginResult>{
-                    override fun onFailure(call: Call<LoginResult>, t: Throwable) {
+                call.enqueue(object :Callback<String>{
+                    override fun onFailure(call: Call<String>, t: Throwable) {
                         Log.d("mobile", t.toString())
                     }
 
-                    override fun onResponse(call: Call<LoginResult>, response: Response<LoginResult>) {
-                        if(response.isSuccessful){
-                            Log.d("mobile", response.toString())
+                    override fun onResponse(call: Call<String>, response: Response<String>) {
 
+                        val str = response.body().toString().split(",")
+                        val succes = str.get(0).split(":").get(1)
+                        val login_id = str.get(1).split(":").get(1)
+
+                        if(succes.toBoolean() == true){
+                            Log.d("mobile", response.body().toString())
+//
                                 val builder1 = AlertDialog.Builder(this@LoginActivity)
                                 builder1.setTitle("Login Success")
-                                builder1.setMessage(id + "님 환영합니다.")
+                                builder1.setMessage(login_id + "님 환영합니다.")
                                 builder1.show()
 
                                 val intent = Intent(this@LoginActivity, MainActivity::class.java)
@@ -63,6 +68,10 @@ class LoginActivity : AppCompatActivity() {
 //                                intent.putExtra()
                                 finish()
                          }
+                        else{
+                            Log.d("mobile", response.body().toString())
+                            Toast.makeText(this@LoginActivity,"아이디와 비밀번호를 다시 확인하세요", Toast.LENGTH_LONG).show()
+                        }
                     }
 
                 })

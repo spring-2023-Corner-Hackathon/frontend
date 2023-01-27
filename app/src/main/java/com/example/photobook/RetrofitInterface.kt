@@ -9,7 +9,7 @@ interface RetrofitInterface {
     fun executeLogin(
         @Query("id") id: String,
         @Query("password") password: String
-    ): Call<LoginResult>
+    ): Call<String>
 
     @POST("register")
     fun executeRegister(

@@ -14,6 +14,7 @@ import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.converter.scalars.ScalarsConverterFactory
 
 class RegisterActivity : AppCompatActivity() {
     lateinit var registerBinding: ActivityRegisterBinding
@@ -25,13 +26,14 @@ class RegisterActivity : AppCompatActivity() {
 
         //회원가입 완료 버튼을 눌렀을때
         registerBinding.registerBtn.setOnClickListener{
-            val id = registerBinding.ID.toString()
+            val id = registerBinding.ID.getText().toString()
             val pass = registerBinding.Password.getText().toString()
             val repass = registerBinding.repass.getText().toString()
-            val nickname = registerBinding.nickname.toString()
+            val nickname = registerBinding.nickname.getText().toString()
 
             val retrofit = Retrofit.Builder()
                 .baseUrl("http://10.0.2.2:8080/api/")
+                .addConverterFactory(ScalarsConverterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
 
@@ -55,36 +57,32 @@ class RegisterActivity : AppCompatActivity() {
                     //서버로 JSON 형식으로 보내기
                     call.clone().enqueue(object : Callback<String> {
                         override fun onFailure(call: Call<String>, t: Throwable) {
-                            Log.d("mobile", t.toString())
+//                            Log.d("mobile", t.toString())
                         }
 
                         override fun onResponse(call: Call<String>, response: Response<String>) {
-                            Log.d("mobile", response.code().toString())
+                            val str = response.body().toString().split(",")
+                            val success = str.get(0).split(":").get(1)
+                            val message = str.get(1).split(":").get(1).split("\"").get(1)
 
-                            if(response.isSuccessful){
+                            if(success.toBoolean() == true){
 
-                                Log.d("mobile", response.toString())
                                 val builder1 = AlertDialog.Builder(this@RegisterActivity)
                                 builder1.setTitle("Register Success")
                                 builder1.setMessage(id + "님 회원가입되었습니다.")
                                 builder1.show()
 
-                                val intent =Intent(this@RegisterActivity, MainActivity::class.java)
+                                val intent =Intent(this@RegisterActivity, LoginActivity::class.java)
                                 startActivity(intent)
-//                                intent.putExtra()
+//                               intent.putExtra()
                                 finish()
+                            }
+                            else{
+                                Toast.makeText(this@RegisterActivity,message, Toast.LENGTH_LONG).show()
                             }
                         }
 
                     })
-
-//                    Toast.makeText(
-//                        this@RegisterActivity,
-//                        "가입되었습니다.",
-//                        Toast.LENGTH_SHORT
-//                    ).show()
-//                    val intent = Intent(applicationContext, LoginActivity::class.java)
-//                    startActivity(intent)
                 }
                 else{
                     //비밀번호가 일치하지 않는다면
